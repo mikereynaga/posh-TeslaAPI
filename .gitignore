@@ -1,0 +1,9 @@
+bin/
+obj/
+out/
+testing/
+.venv/
+.vs/
+.vscode/
+*.mof
+**/test.ps1
