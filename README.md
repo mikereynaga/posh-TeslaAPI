@@ -1,21 +1,47 @@
-# Overview
+# posh-TeslaAPI
 
-messing around with the Tesla API
+## Overview
 
-https://www.teslaapi.io/
+This repo contains a PowerShell module for interacting with the Tesla API for a vehicle
 
-Unofficial: https://tesla-api.timdorr.com/
+### How To Use
 
-How-To-Use
+you'll first need to create a connection using the same credentials you use to sign into
+tesla.com and assign it to a var:
 
-first create a tesla connection with your creds for the tesla site:
+```powershell
+$apiX = `
+    Get-TeslaAPIConnection `
+        -UserName 'email@aol.com' `
+        -Password ( 'tesla.comPassword' | ConvertTo-SecureString -AsPlainText -Force )
+```
+from now on you can use this var for all other cmdlets, they accept the connection via the parameter '-TeslaX'
 
-$api_connection = Get-TeslaAPIConnection -UserName "user" -Password ( "pass" | ConvertTo-SecureString -AsPlainText -Force )
+you can then either get a list of all cars on the account with only the connection var:
 
-then pass that connection, either by itseld to get all vehicles on an account:
+```powershell
+Get-AllVehicles -TeslaX $apiX
+```
 
-Get-AllVehicles -TeslaX $api_connection
+or call any other cmdlet with the connection and the vehicles id ( note this is the id object NOT the vehicle_id you get back from Get-TeslaVehicle or Get-AllVehicles )
 
-or with a vehicle ID to all the other Get cmdlets:
+```powershell
+Get-VehicleChargeState -TeslaX $apiX -VehicleId 123456789
 
-Get-VehicleChargeState -TeslaX $api_connection -VehicleID 123456789456
+Unlock-VehicleDoors -TeslaX $apiX -VehicleId 123456789
+```
+
+## TO-DO
+
+need to implement all the POST operations that require a parameter, currently the only POST ops supported are 
+boolean, i.e. Lock/Unlock, Honk Horn, Flash Lights
+
+## How To Contribute
+
+Fork this repo, make/test changes and issue a pull request.
+
+## Tesla API Documentation
+
+Official(?): https://www.teslaapi.io/
+
+Unofficial : https://tesla-api.timdorr.com/

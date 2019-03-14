@@ -89,4 +89,4 @@ function Get-VehicleState
     ( Get-AllData -TeslaX $TeslaX -VehicleID $VehicleID ).vehicle_state
 }
 
-Export-ModuleMember Get-VehicleChargeState, Get-VehicleClimateState, Get-VehicleConfig, Get-VehicleData, Get-VehicleDriveState, Get-VehicleGUISettings, Get-VehicleState
+Export-ModuleMember Get-VehicleChargeState,Get-VehicleClimateState,Get-VehicleConfig,Get-VehicleData,Get-VehicleDriveState,Get-VehicleGUISettings,Get-VehicleState

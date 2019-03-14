@@ -69,22 +69,7 @@ PowerShellVersion = '5.1'
 # NestedModules = @()
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
-FunctionsToExport = @( 
-    'Get-AllVehicles',
-    'Get-TeslaAPIConnection',
-    'Get-TeslaVehicle',
-    'Get-VehicleChargeState',
-    'Get-VehicleClimateState',
-    'Get-VehicleConfig',
-    'Get-VehicleData',
-    'Get-VehicleDriveState',
-    'Get-VehicleGUISettings',
-    'Get-VehicleState',
-    'Lock-VehicleDoors',
-    'Unlock-VehicleDoors',
-    'Start-FlashLights',
-    'Start-HornHonk'
-)
+FunctionsToExport = @('Get-AllVehicles','Get-TeslaAPIConnection','Get-TeslaVehicle','Get-VehicleChargeState','Get-VehicleClimateState','Get-VehicleConfig','Get-VehicleData','Get-VehicleDriveState','Get-VehicleGUISettings','Get-VehicleState','Lock-VehicleDoors','Start-FlashLights','Start-HornkHonk','Unlock-VehicleDoors')
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 CmdletsToExport = @()

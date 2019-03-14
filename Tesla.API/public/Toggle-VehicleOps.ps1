@@ -50,4 +50,4 @@ function Unlock-VehicleDoors
     Set-NoParams -TeslaX $TeslaX -VehicleID $VehicleID -EndPoint door_unlock
 }
 
-Export-ModuleMember Lock-VehicleDoors, Start-FlashLights, Start-HornkHonk, Unlock-VehicleDoors
+Export-ModuleMember Lock-VehicleDoors,Start-FlashLights,Start-HornkHonk,Unlock-VehicleDoors
