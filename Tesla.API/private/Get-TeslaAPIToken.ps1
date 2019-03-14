@@ -33,6 +33,9 @@ function Get-TeslaAPIToken
             -Body ( $request_body | ConvertTo-Json ) `
             -Method Post `
             -ErrorAction Stop
+
+        Clear-Variable Password,clear_text_pw
+        Remove-Variable Password,clear_text_pw
     }
     catch
     {
