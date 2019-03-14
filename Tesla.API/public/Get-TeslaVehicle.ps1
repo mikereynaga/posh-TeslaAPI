@@ -13,7 +13,7 @@ function Get-TeslaVehicle
         $vehicle = `
             ( ( Invoke-WebRequest `
                 -Headers $TeslaX.authHeader `
-                -Uri "$( $TeslaX.baseURL )/api/1/vehicles/$( $VehicleID )" `
+                -Uri "$( $TeslaX.vehiclesURL )/$( $VehicleID )" `
                 -Method Get `
                 -ErrorAction Stop ).Content | ConvertFrom-Json ).response
     }

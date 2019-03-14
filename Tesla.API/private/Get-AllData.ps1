@@ -8,11 +8,11 @@ function Get-AllData
         [long]$VehicleID
     )
 
-    $data_url = "$( $TeslaX.baseURL )/api/1/vehicles/$( $VehicleID )/data"
+    $data_url = "$( $TeslaX.vehiclesURL )/$( $VehicleID )/data"
 
     if( ( Get-TeslaVehicle -TeslaX $TeslaX -VehicleID $VehicleID ).State -eq [carState]::asleep )
     {
-        Switch-TeslaState -TeslaX $TeslaX -VehicleID $VehicleID
+        Set-NoParams -TeslaX $TeslaX -VehicleID $VehicleID -EndPoint wake_up
     }
 
     try

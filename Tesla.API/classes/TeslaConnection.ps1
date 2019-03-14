@@ -2,6 +2,7 @@ class TeslaConnection
 {
     [string]$Token
     [string]$baseURL
+    [string]$vehiclesURL
     [hashtable]$authHeader
 }
 
@@ -11,11 +12,16 @@ function Get-TeslaConnection
     param(
         [Parameter( Mandatory=$true  )]
         [string]$UserName,
-        [Parameter( Mandatory=$true  )]
+        [Parameter( Mandatory=$false )]
         [SecureString]$Password,
         [Parameter( Mandatory=$false )]
         [string]$AuthToken
     )
+
+    if( !( $Password ) -and !( $AuthToken ) )
+    {
+        Throw "Must supply either an account password or a valid bearer token"
+    }
 
     $api_vars = ( Get-Content ".\Tesla.API\data\module_data.json" | ConvertFrom-Json )
     if( [string]::IsNullOrEmpty( $AuthToken ) )
@@ -35,6 +41,7 @@ function Get-TeslaConnection
 
     $new_connection = [TeslaConnection]::new()
     $new_connection.baseURL = $api_vars.base_url
+    $new_connection.vehiclesURL = $api_vars.base_url + $api_vars.api_vehicles
     $new_connection.Token = $auth_token
     $new_connection.authHeader = @{
         "Authorization" = "Bearer $( $auth_token )";

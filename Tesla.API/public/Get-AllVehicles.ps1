@@ -13,7 +13,7 @@ function Get-AllVehicles
         $vehicles = `
             Invoke-WebRequest `
                 -Headers $TeslaX.authHeader `
-                -Uri "$( $TeslaX.baseURL )/api/1/vehicles" `
+                -Uri $TeslaX.vehiclesURL `
                 -Method Get `
                 -ErrorAction Stop
     }

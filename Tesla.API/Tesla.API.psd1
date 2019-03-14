@@ -69,16 +69,31 @@ PowerShellVersion = '5.1'
 # NestedModules = @()
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
-FunctionsToExport = @('Get-AllVehicles','Get-TeslaAPIConnection','Get-TeslaVehicle','Get-VehicleChargeState','Get-VehicleClimateState','Get-VehicleConfig','Get-VehicleData','Get-VehicleDriveState','Get-VehicleGUISettings','Get-VehicleState')
+FunctionsToExport = @( 
+    'Get-AllVehicles',
+    'Get-TeslaAPIConnection',
+    'Get-TeslaVehicle',
+    'Get-VehicleChargeState',
+    'Get-VehicleClimateState',
+    'Get-VehicleConfig',
+    'Get-VehicleData',
+    'Get-VehicleDriveState',
+    'Get-VehicleGUISettings',
+    'Get-VehicleState',
+    'Lock-VehicleDoors',
+    'Unlock-VehicleDoors',
+    'Start-FlashLights',
+    'Start-HornHonk'
+)
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = '*'
+CmdletsToExport = @()
 
 # Variables to export from this module
-VariablesToExport = '*'
+VariablesToExport = @()
 
 # Aliases to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no aliases to export.
-AliasesToExport = '*'
+AliasesToExport = @()
 
 # DSC resources to export from this module
 # DscResourcesToExport = @()
