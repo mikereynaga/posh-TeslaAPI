@@ -3,7 +3,7 @@ function Get-AllVehicles
     [cmdletbinding()]
     param(
         [Parameter( Mandatory=$true )]
-        [TeslaConnection]$TeslaX
+        [psobject]$TeslaX
     )
 
     $all_vehicles = @()

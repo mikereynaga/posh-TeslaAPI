@@ -3,7 +3,7 @@ function Lock-VehicleDoors
     [cmdletbinding()]
     param(
         [Parameter( Mandatory=$true )]
-        [TeslaConnection]$TeslaX,
+        [psobject]$TeslaX,
         [Parameter( Mandatory=$true )]
         [long]$VehicleID
     )
@@ -16,7 +16,7 @@ function Start-FlashLights
     [cmdletbinding()]
     param(
         [Parameter( Mandatory=$true )]
-        [TeslaConnection]$TeslaX,
+        [psobject]$TeslaX,
         [Parameter( Mandatory=$true )]
         [long]$VehicleID
     )
@@ -29,7 +29,7 @@ function Start-HornkHonk
     [cmdletbinding()]
     param(
         [Parameter( Mandatory=$true )]
-        [TeslaConnection]$TeslaX,
+        [psobject]$TeslaX,
         [Parameter( Mandatory=$true )]
         [long]$VehicleID
     )
@@ -42,7 +42,7 @@ function Unlock-VehicleDoors
     [cmdletbinding()]
     param(
         [Parameter( Mandatory=$true )]
-        [TeslaConnection]$TeslaX,
+        [psobject]$TeslaX,
         [Parameter( Mandatory=$true )]
         [long]$VehicleID
     )

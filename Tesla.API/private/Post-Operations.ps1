@@ -3,7 +3,7 @@ function Set-NoParams
     [cmdletbinding()]
     param(
         [Parameter( Mandatory=$true )]
-        [TeslaConnection]$TeslaX,
+        [psobject]$TeslaX,
         [Parameter( Mandatory=$true )]
         [long]$VehicleID,
         [Parameter( Mandatory=$true )]

@@ -3,7 +3,7 @@ function Get-TeslaVehicle
     [cmdletbinding()]
     param(
         [Parameter( Mandatory=$true )]
-        [TeslaConnection]$TeslaX,
+        [psobject]$TeslaX,
         [Parameter( Mandatory=$true )]
         [long]$VehicleID
     )

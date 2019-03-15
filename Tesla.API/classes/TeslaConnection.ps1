@@ -23,7 +23,7 @@ function Get-TeslaConnection
         Throw "Must supply either an account password or a valid bearer token"
     }
 
-    $api_vars = ( Get-Content ".\Tesla.API\data\module_data.json" | ConvertFrom-Json )
+    $api_vars = ( Get-Content ( Join-Path $MyInvocation.MyCommand.Module.ModuleBase "\data\module_data.json" ) | ConvertFrom-Json )
     if( [string]::IsNullOrEmpty( $AuthToken ) )
     {
         $auth_token = `

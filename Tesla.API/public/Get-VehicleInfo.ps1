@@ -3,7 +3,7 @@ function Get-VehicleChargeState
     [cmdletbinding()]
     param(
         [Parameter( Mandatory=$true )]
-        [TeslaConnection]$TeslaX,
+        [psobject]$TeslaX,
         [Parameter( Mandatory=$true )]
         [long]$VehicleID
     )
@@ -16,7 +16,7 @@ function Get-VehicleClimateState
     [cmdletbinding()]
     param(
         [Parameter( Mandatory=$true )]
-        [TeslaConnection]$TeslaX,
+        [psobject]$TeslaX,
         [Parameter( Mandatory=$true )]
         [long]$VehicleID
     )
@@ -29,7 +29,7 @@ function Get-VehicleConfig
     [cmdletbinding()]
     param(
         [Parameter( Mandatory=$true )]
-        [TeslaConnection]$TeslaX,
+        [psobject]$TeslaX,
         [Parameter( Mandatory=$true )]
         [long]$VehicleID
     )
@@ -42,7 +42,7 @@ function Get-VehicleData
     [cmdletbinding()]
     param(
         [Parameter( Mandatory=$true )]
-        [TeslaConnection]$TeslaX,
+        [psobject]$TeslaX,
         [Parameter( Mandatory=$true )]
         [long]$VehicleID
     )
@@ -55,7 +55,7 @@ function Get-VehicleDriveState
     [cmdletbinding()]
     param(
         [Parameter( Mandatory=$true )]
-        [TeslaConnection]$TeslaX,
+        [psobject]$TeslaX,
         [Parameter( Mandatory=$true )]
         [long]$VehicleID
     )
@@ -68,7 +68,7 @@ function Get-VehicleGUISettings
     [cmdletbinding()]
     param(
         [Parameter( Mandatory=$true )]
-        [TeslaConnection]$TeslaX,
+        [psobject]$TeslaX,
         [Parameter( Mandatory=$true )]
         [long]$VehicleID
     )
@@ -81,7 +81,7 @@ function Get-VehicleState
     [cmdletbinding()]
     param(
         [Parameter( Mandatory=$true )]
-        [TeslaConnection]$TeslaX,
+        [psobject]$TeslaX,
         [Parameter( Mandatory=$true )]
         [long]$VehicleID
     )
