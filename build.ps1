@@ -11,7 +11,7 @@ param ($Task = 'Default')
 # Grab nuget bits, install modules, set build variables, start build.
 Get-PackageProvider -Name NuGet -ForceBootstrap | Out-Null
 
-Install-Module Psake, PSDeploy, BuildHelpers, PSScriptAnalyzer, PoshRSJob -Repository powershell-eis-group -force
+Install-Module Psake, PSDeploy, BuildHelpers, PSScriptAnalyzer, PoshRSJob -force
 Import-Module Psake, BuildHelpers, PSScriptAnalyzer
 
 Set-BuildEnvironment

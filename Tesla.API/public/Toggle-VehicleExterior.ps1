@@ -11,32 +11,6 @@ function Lock-VehicleDoors
     Set-NoParams -TeslaX $TeslaX -VehicleID $VehicleID -EndPoint door_lock
 }
 
-function Start-FlashLights
-{
-    [cmdletbinding()]
-    param(
-        [Parameter( Mandatory=$true )]
-        [psobject]$TeslaX,
-        [Parameter( Mandatory=$true )]
-        [long]$VehicleID
-    )
-
-    Set-NoParams -TeslaX $TeslaX -VehicleID $VehicleID -EndPoint flash_lights
-}
-
-function Start-HornkHonk
-{
-    [cmdletbinding()]
-    param(
-        [Parameter( Mandatory=$true )]
-        [psobject]$TeslaX,
-        [Parameter( Mandatory=$true )]
-        [long]$VehicleID
-    )
-
-    Set-NoParams -TeslaX $TeslaX -VehicleID $VehicleID -EndPoint honk_horn
-}
-
 function Unlock-VehicleDoors
 {
     [cmdletbinding()]
@@ -50,4 +24,17 @@ function Unlock-VehicleDoors
     Set-NoParams -TeslaX $TeslaX -VehicleID $VehicleID -EndPoint door_unlock
 }
 
-Export-ModuleMember Lock-VehicleDoors,Start-FlashLights,Start-HornkHonk,Unlock-VehicleDoors
+function Start-FlashLights
+{
+    [cmdletbinding()]
+    param(
+        [Parameter( Mandatory=$true )]
+        [psobject]$TeslaX,
+        [Parameter( Mandatory=$true )]
+        [long]$VehicleID
+    )
+
+    Set-NoParams -TeslaX $TeslaX -VehicleID $VehicleID -EndPoint flash_lights
+}
+
+Export-ModuleMember Lock-VehicleDoors,Unlock-VehicleDoors,Start-FlashLights
